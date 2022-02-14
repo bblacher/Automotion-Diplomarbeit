@@ -1,5 +1,5 @@
 \documentclass[fontsize=12pt]{article}
-\usepackage[ngerman]{babel}
+\usepackage[english,ngerman]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb}
@@ -10,6 +10,7 @@
 \usepackage{pgfplots}
 \usepackage{datetime2}
 \usepackage{tikz}
+\usepackage{pdfpages}
 \usetikzlibrary{arrows.meta,patterns}
 %\usetikzlibrary{ipe} % ipe compatibility library
 
@@ -101,16 +102,32 @@
 \fancyhf{}
 \lfoot{B. Blacher, F. Weissenbacher}
 \lhead{Modellauto mit Sensorik}
+\rhead{\includegraphics[scale=0.5]{htllogo.png}}
 \rfoot{\thepage{}}
-
-\author{Benjamin Blacher\and Florian Weissenbacher}
-\date{\today}
-\title{Modellauto mit Sensorik}
  
 \begin{document}
-\maketitle
-\newpage
-\tableofcontents
+\begin{titlepage}
+	\centering
+	\includegraphics[scale=2]{htllogo.png}
+	\newline
+	{\huge Diplomarbeit \par}
+	{\Large Fachbereich Mechatronik\par}
+	\vspace{1.5cm}
+	{\huge Modellauto mit Sensorik\par}
+	\vspace{2cm}
+	{\Large verfasst und vorgelegt von\par}
+	{\huge Benjamin Blacher\par}
+	{\huge Florian Weissenbacher\par}
+	\vfill
+	betreut von\par
+	Dipl. Ing. Wolfgang \textsc{Czernin}\par
+	Dipl. Ing. Matthias \textsc{Dirl}
+
+	\vfill
+
+% Bottom of the page
+	{\large Kapfenberg, \today\par}
+\end{titlepage}
 \newpage
 
 %Tikz example
@@ -138,8 +155,12 @@
 %\caption{xxx}
 %\label{fig:xxx}
 %\end{figure}
+\includegraphics[page=1, scale=0.7]{./sources/DADB.pdf}
+\newpage
 \input{eidesstattlErkl.tex}
 \newpage
 \input{abstract.tex}
+\newpage
+\tableofcontents
 \newpage
 \end{document}
