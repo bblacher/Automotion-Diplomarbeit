@@ -12,6 +12,8 @@
 \usepackage{tikz}
 \usepackage{pdfpages}
 \usetikzlibrary{arrows.meta,patterns}
+\usepackage{acronym}
+\usepackage{apacite}
 %\usetikzlibrary{ipe} % ipe compatibility library
 
 \usepackage{geometry}
@@ -108,6 +110,7 @@
 \begin{document}
 \begin{titlepage}
 	\centering
+	\hspace{1.5cm}
 	\includegraphics[scale=2]{htllogo.png}
 	\newline
 	{\huge Diplomarbeit \par}
@@ -163,4 +166,22 @@
 \newpage
 \tableofcontents
 \newpage
+\input{einleitung.tex}
+\newpage
+\input{theoretGrundl.tex}
+\newpage
+\input{realisierungskonzepte.tex}
+\newpage
+\input{technUmsetzung.tex}
+\newpage
+\input{zusammenfassung.tex}
+\newpage
+\bibliographystyle{apacite}
+\bibliography{bibliography.bib}
+\newpage
+\input{listoffigures.tex}
+\newpage
+\input{listoftables.tex}
+\newpage
+\input{listofabbreviations.tex}
 \end{document}
