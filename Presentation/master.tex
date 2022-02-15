@@ -2,6 +2,10 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\usepackage{amssymb}
+\usepackage{pifont}
+
+\newcommand{\xmark}{\ding{55}}
 
 \setbeamercovered{transparent=40}
 \beamertemplatenavigationsymbolsempty
@@ -12,16 +16,127 @@
 \graphicspath{{./pictures/}}
 
 \setbeamertemplate{title page}[default]
+\setbeamertemplate{itemize items}{\color{white}$\triangleright$}
+
+\addtobeamertemplate{headline}{}{\vspace*{0.1cm}}
 
 \author{Benjamin Blacher \and Florian Weissenbacher}
 \title{Modellauto mit Sensorik}
-\date{2021-12-03}
+\date{\today}
 
 \begin{document}
 
-\section{xxx}
 \begin{frame}
 \titlepage
+\end{frame}
+
+\section{Objective}
+\begin{frame}
+\frametitle{Goals}
+\onslide<1>{Acceleration}
+\newline
+\onslide<2>{Orientation}
+\newline
+\onslide<3>{Rotational Velocity}
+\newline
+\onslide<4>{GPS}
+\end{frame}
+
+\section{Current State}
+\begin{frame}
+\frametitle{IMU}
+\onslide<1>{\checkmark \ Code working}
+\newline
+\onslide<2>{\checkmark \ Mounted}
+\newline
+\onslide<3>{\xmark \; Tested}
+\newline
+\onslide<4>{\xmark \; Finished}
+\end{frame}
+
+\begin{frame}
+\frametitle{RPM Sensor}
+\onslide<1>{\checkmark \ Code working}
+\newline
+\onslide<2>{$\thicksim$ Mounted}
+\newline
+\onslide<3>{\xmark \; Tested}
+\newline
+\onslide<4>{\xmark \; Finished}
+\end{frame}
+
+\begin{frame}
+\frametitle{GPS}
+\onslide<1>{\checkmark \ Code working}
+\newline
+\onslide<2>{\xmark \; Mounted}
+\newline
+\onslide<3>{\checkmark \ Tested}
+\newline
+\onslide<4>{\xmark \; Finished}
+\end{frame}
+
+\begin{frame}
+\frametitle{Desktop-App}
+\onslide<1>{\checkmark \ Base Program}
+\newline
+\onslide<2>{\checkmark \ Table View}
+\newline
+\onslide<3>{$\thicksim$ Plot View}
+\newline
+\onslide<4>{\xmark \; Map View}
+\newline
+\onslide<5>{\xmark \; Finished}
+\end{frame}
+
+\begin{frame}
+\frametitle{Goodies}
+\onslide<1>{\checkmark \ USB Data Transfer Mode}
+\newline
+\onslide<2>{\checkmark \ Status LED}
+\newline
+\onslide<3>{\checkmark \ Voltage Display}
+\newline
+\onslide<4>{$\thicksim$ 3D-Model}
+\end{frame}
+
+\section{Challenges}
+\begin{frame}
+\frametitle{IMU}
+\onslide<1>{Readings incorrect}
+\newline
+\onslide<2>{Earth Acceleration included}
+\newline
+\onslide<3>{Readings sluggish}
+\end{frame}
+
+\begin{frame}
+\frametitle{RPM Sensor}
+\onslide<1>{Steering Movement}
+\newline
+\onslide<2>{Suspension Movement}
+\newline
+\onslide<3>{Disk Mount}
+\newline
+\onslide<4>{Environment Influences}
+\end{frame}
+
+\begin{frame}
+\frametitle{Delays}
+\begin{itemize}
+\item Sample Time
+\item IMU Sensorfusion
+\item GPS Delays
+\item \ldots
+\end{itemize}
+\end{frame}
+
+\section{Future}
+\begin{frame}
+\frametitle{Future}
+\onslide<1>{Everything mentioned}
+\newline
+\onslide<2>{Bringing everything to paper}
 \end{frame}
 
 %\begin{frame}
