@@ -21,7 +21,7 @@
 \addtobeamertemplate{headline}{}{\vspace*{0.1cm}}
 
 \author{Benjamin Blacher \and Florian Weissenbacher}
-\title{Modellauto mit Sensorik}
+\title{AutomotionRC}
 \date{\today}
 
 \begin{document}
@@ -40,74 +40,133 @@
 \onslide<3>{Rotational Velocity}
 \newline
 \onslide<4>{GPS}
+\newline
+\onslide<5>{Analyse Data}
 \end{frame}
 
 \section{Current State}
 \begin{frame}
 \frametitle{IMU}
+\begin{tabular}{cl}
+\begin{tabular}{l}
 \onslide<1>{\checkmark \ Code working}
-\newline
+\\
+
 \onslide<2>{\checkmark \ Mounted}
-\newline
+\\
+
 \onslide<3>{\xmark \; Tested}
-\newline
+\\
+
 \onslide<4>{\xmark \; Finished}
+\end{tabular}
+\begin{tabular}{c}
+\includegraphics[scale=0.25]{MPU9250.png}
+\\
+
+\fontsize{5pt}{6pt}\selectfont https://github.com/Intelligent-Vehicle-Perception/MPU-9250-Sensors-Data-Collect
+\end{tabular}
+\end{tabular}
 \end{frame}
 
 \begin{frame}
 \frametitle{RPM Sensor}
+\begin{tabular}{cl}
+\begin{tabular}{l}
 \onslide<1>{\checkmark \ Code working}
-\newline
+\\
+
 \onslide<2>{$\thicksim$ Mounted}
-\newline
+\\
+
 \onslide<3>{\xmark \; Tested}
-\newline
+\\
+
 \onslide<4>{\xmark \; Finished}
+\end{tabular}
+\begin{tabular}{c}
+\includegraphics[scale=0.1]{rpm_rear02.png}
+\end{tabular}
+\end{tabular}
 \end{frame}
 
 \begin{frame}
 \frametitle{GPS}
+\begin{tabular}{cl}
+\begin{tabular}{l}
 \onslide<1>{\checkmark \ Code working}
-\newline
+\\
+
 \onslide<2>{\xmark \; Mounted}
-\newline
+\\
+
 \onslide<3>{\checkmark \ Tested}
-\newline
+\\
+
 \onslide<4>{\xmark \; Finished}
+\end{tabular}
+\begin{tabular}{c}
+\includegraphics[scale=0.18]{GPS.png}
+\\
+
+{\tiny https://nettigo.eu/products/neo6mv2-gps-module-with-active-antenna}
+\end{tabular}
+\end{tabular}
 \end{frame}
 
 \begin{frame}
 \frametitle{Desktop-App}
+\begin{tabular}{cl}
+\begin{tabular}{l}
 \onslide<1>{\checkmark \ Base Program}
-\newline
+\\
+
 \onslide<2>{\checkmark \ Table View}
-\newline
+\\
+
 \onslide<3>{$\thicksim$ Plot View}
-\newline
-\onslide<4>{\xmark \; Map View}
-\newline
-\onslide<5>{\xmark \; Finished}
+\\
+
+\onslide<4,5>{\checkmark \ Map View}
+\end{tabular}
+\begin{tabular}{c}
+\only<1>{\includegraphics[scale=0.18]{OverView.png}}\only<2>{\includegraphics[scale=0.18]{TableView.png}}\only<3>{\includegraphics[scale=0.18]{PlotView.png}}\only<4>{\includegraphics[scale=0.18]{MapView.png}}\only<5>{\includegraphics[scale=0.18]{MapViewSatellite.png}}
+\end{tabular}
+\end{tabular}
 \end{frame}
 
 \begin{frame}
 \frametitle{Goodies}
+\begin{tabular}{cl}
+\begin{tabular}{l}
 \onslide<1>{\checkmark \ USB Data Transfer Mode}
-\newline
+\\
+
 \onslide<2>{\checkmark \ Status LED}
-\newline
+\\
+
 \onslide<3>{\checkmark \ Voltage Display}
-\newline
+\\
+
 \onslide<4>{$\thicksim$ 3D-Model}
+\end{tabular}
+\begin{tabular}{c}
+\only<2>{\includegraphics[scale=0.07]{LED.png}}
+\only<3>{\includegraphics[scale=0.03]{VoltageDisplay.jpg}}
+\end{tabular}
+\end{tabular}
 \end{frame}
 
 \section{Challenges}
 \begin{frame}
 \frametitle{IMU}
 \onslide<1>{Readings incorrect}
-\newline
+\\
+
 \onslide<2>{Earth Acceleration included}
-\newline
-\onslide<3>{Readings sluggish}
+\begin{center}
+\includegraphics[scale=0.4]{IMUCalc.png}
+\end{center}
 \end{frame}
 
 \begin{frame}
@@ -116,19 +175,7 @@
 \newline
 \onslide<2>{Suspension Movement}
 \newline
-\onslide<3>{Disk Mount}
-\newline
-\onslide<4>{Environment Influences}
-\end{frame}
-
-\begin{frame}
-\frametitle{Delays}
-\begin{itemize}
-\item Sample Time
-\item IMU Sensorfusion
-\item GPS Delays
-\item \ldots
-\end{itemize}
+\onslide<3>{Environment Influences}
 \end{frame}
 
 \section{Future}
@@ -138,11 +185,4 @@
 \newline
 \onslide<2>{Bringing everything to paper}
 \end{frame}
-
-%\begin{frame}
-%\frametitle{xxx}
-%\begin{center}
-%\includegraphics[scale=x]{*.*}
-%\end{center}
-%\end{frame}
 \end{document}
