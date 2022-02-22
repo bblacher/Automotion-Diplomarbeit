@@ -1,2 +1,10 @@
 \section{Theoretische Grundlagen}
 \label{sec:theoretGrundl}
+Dieses Kapitel behandelt die theoretischen Grundlagen für verwendete Verfahren, Hardware und Software. Es hat die Aufgabe den Leser:innen für das Verständnis essentielle Informationen zu übermitteln.
+\subsection{Globales Positionsbestimmungssystem}
+\label{subsec:GPS}
+\glqq GPS ist ein satellitengestütztes Navigationssystem mit 32 aktiven Satelliten (Stand: 2014) und heißt vollständig "Navigational Satellite Timing and Ranging - Global Positioning System" (NAVSTAR-GPS). Das Verteidigungsministerium der USA (Department of Defense, DOD) ist der Betreiber von GPS und hat es hauptsächlich für militärische Zwecke vorgesehen. GPS wurde am 17. Juli 1995 offiziell in Betrieb genommen.
+
+Mit GPS lässt sich der Standort und die Zeit ermitteln. Die Standortbestimmung umfasst die geographische Länge und Breite, sowie die Höhe. Die Genauigkeit liegt zwischen 13 Meter und 1 Millimeter. Genauigkeiten unter 2 Meter sind nur mit viel Aufwand (Differential-GPS) erreichbar. Übliche GPS-Empfänger und Handys haben eine Genauigkeit von 13 bis 2 Meter. Die horizontale Genauigkeit liegt bei 10 bis 15 Meter.
+Drei Satelliten werden benötigt, um Längen-, Breitengrad und Höhe errechnen zu können. Der vierte Satellit wird benötigt, um die Uhr des Empfängers mit den Uhren der Satelliten synchronisieren zu können. Die Zeiten müssen absolut übereinstimmen, sonst kommt es zur Fehlberechnung.
+Einfach ausgedrückt, wird aus der Laufzeit des Signals vom Satelliten die Entfernung zum Satelliten vom Empfänger errechnet. In Kombination mit mehreren Satelliten kann man die Position auf der Erdoberfläche bestimmen (Triangulation).\grqq \ \cite{schnabelGPS}
