@@ -11,11 +11,15 @@
 \usepackage{datetime2}
 \usepackage{tikz}
 \usepackage{pdfpages}
+\usepackage{csquotes}
 \usetikzlibrary{arrows.meta,patterns}
 \usepackage{acronym}
-\usepackage{apacite}
 \usepackage[nottoc,numbib]{tocbibind}
+\usepackage{hhline}
+\usepackage{eurosym}
 \usetikzlibrary{ipe} % ipe compatibility library
+\usepackage[backend=biber,style=apa]{biblatex}
+\bibliography{bibliography.bib}
 
 \usepackage{geometry}
  \geometry{
@@ -194,8 +198,7 @@
 \newpage
 \input{zusammenfassung.tex}
 \newpage
-\bibliographystyle{apacite}
-\bibliography{bibliography.bib}
+\printbibliography
 \newpage
 \input{listoffigures.tex}
 \newpage
