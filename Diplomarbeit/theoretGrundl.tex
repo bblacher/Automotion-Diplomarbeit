@@ -23,6 +23,8 @@ Die \ac{IMU} liefert die Beschleunigungen sowohl in x-, y- als auch z-Richtung, 
 
 \subsection{Hall-Effekt-Sensor}
 \label{subsec:tHall}
+Wenn ein elektrischer Leiter mit Strom durchflossen wird, so bewegen sich die Elektronen geradlinig in eine Richtung. Es sei denn der Leiter befindet sich im Wirkungsbereich eines Magnetfeldes (z.B. eines Permanentmagneten), wobei die Feldlinien normal zur Elektronenbahn stehen. Die Elektronen werden dann auf eine gekrümmte Bahn abgelenkt, da das Magnetfeld des Leiters, dem des Permanentmagneten entgegenwirkt. Deswegen befinden sich auf der Seite des Leiters mit der Bahn-Krümmung mehr Elektronen, was einen Potentialunterschied zur Folge hat. Dieser variiert je nach Position des Permanentmagneten. Sogenannte Hall-Effekt-Sensoren funktionieren auf diesem Prinzip, sind allerdings aus einem Halbleitermaterial aufgebaut. Man kann hierbei zwischen analogen und digitalen Hall-Senoren unterscheiden.\\
+Wie der Name vermuten lässt, ist das Ausgangssignal eines analogen Hall-Sensors linear variabel und direkt proportional zur magnetischen Flussdichte. Die Grenzen der Ausgangsspannung werden von der Versorgungsspannung definiert. Auf digitalen Hall-Sensoren befindet sich ein bistabiler Stromkreis, ein sogenannter Schmitt-Trigger, welcher den Ausgang auf logisch 0 oder 1 setzt, je nachdem, ob der bestimmte Grenzwert überschritten wurde, oder nicht. (\cite{rsHALL})
 
 \subsection{Infrarot-Lichtschranke}
 \label{subsec:tIR}
