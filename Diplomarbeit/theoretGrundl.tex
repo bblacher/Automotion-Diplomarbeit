@@ -16,7 +16,48 @@ Die \ac{IMU} liefert die Beschleunigungen sowohl in x-, y- als auch z-Richtung, 
 (\cite{UCAM-CL-TR-696})
 \begin{figure}[h]
 \centering
-\missingfigure{}
+\tdplotsetmaincoords{60}{120}
+\tdplotsetrotatedcoords{-15}{20}{25}
+\begin{tikzpicture}
+		[tdplot_rotated_coords,
+			cubefront/.style={very thick,black},
+			cubeback/.style={thick,dashed,black},
+			grid/.style={very thin,gray},
+			axis/.style={->,red,thick},
+			rotated axis/.style={->,darkgreen,thick}]
+
+	\foreach \x in {-0.25,0,...,2.25}
+		\foreach \y in {-0.25,0,...,2.25}
+		{
+			\draw[grid] (\x,-0.25) -- (\x,2.25);
+			\draw[grid] (-0.25,\y) -- (2.25,\y);
+		}
+			
+	\draw[axis,tdplot_main_coords] (0,0,0) -- (3,0,0) node[anchor=west]{$x$};
+	\draw[axis,tdplot_main_coords] (0,0,0) -- (0,3,0) node[anchor=north west]{$y$};
+	\draw[axis,tdplot_main_coords] (0,0,0) -- (0,0,3) node[anchor=west]{$z$};
+
+
+	\draw[rotated axis] (0,0,0) -- (3,0,0) node[anchor=west]{$x'$};
+	\draw[rotated axis] (0,0,0) -- (0,3,0) node[anchor=south west]{$y'$};
+	\draw[rotated axis] (0,0,0) -- (0,0,3) node[anchor=west]{$z'$};
+
+	\draw[cubeback] (0,0,0) -- (0,2,0);
+	\draw[cubefront] (0,2,0) -- (2,2,0);
+	\draw[cubefront] (2,2,0) -- (2,0,0);
+	\draw[cubeback] (2,0,0) -- (0,0,0);
+	
+	\draw[cubefront] (0,0,1) -- (0,2,1);
+	\draw[cubefront] (0,2,1) -- (2,2,1);
+	\draw[cubefront] (2,2,1) -- (2,0,1);
+	\draw[cubefront] (2,0,1) -- (0,0,1);
+	
+	\draw[cubeback] (0,0,0) -- (0,0,1);
+	\draw[cubefront] (0,2,0) -- (0,2,1);
+	\draw[cubefront] (2,0,0) -- (2,0,1);
+	\draw[cubefront] (2,2,0) -- (2,2,1);
+	
+\end{tikzpicture}
 \caption{Eine \ac{IMU} in einem \ac{3D}-Koordinatensystem}
 \label{fig:IMU3D}
 \end{figure}
@@ -31,7 +72,17 @@ Wie der Name vermuten lässt, ist das Ausgangssignal eines analogen Hall-Sensors
 
 \subsection{Raspberry Pi Zero 2 W}
 \label{subsec:tRasPi}
-Der Raspberry Pi Zero 2 W ist ein Einplatinencomputer der Raspberry Pi Foundation. Mit einem 1 \ac{GHz} quad-core 64-bit Arm Prozessor, 512 \ac{MB} \ac{SDRAM}, eingebauten \ac{WLAN}- und Bluetooth-Modulen und 40 pins für \ac{GPIO}, \ac{SPI}, \ac{I2C}, \ac{UART} und Spannungsversorgung stellt er ein umfangreiches Paket für die Interaktion mit diverser Sensorik dar. Als Betriebssystem bietet die Raspberry Pi Foundation eine auf Debian basierte Linux-Distribution namens Raspberry Pi \ac{OS} an. Raspberry Pi \ac{OS} ist in drei verschiedenen Varianten verfügbar, diese unterscheiden sich im Funktionsumfang und der Installationsgröße. Aufgrund der limitierten Rechenleistung des \ac{Raspi} Zero 2 W und der fehlenden Notwendigkeit für eine Desktop-Umgebung ist die Lite-Version am besten geeignet.
+Der Raspberry Pi Zero 2 W ist ein Einplatinencomputer der Raspberry Pi Foundation. Mit einem 1 \ac{GHz} quad-core 64-bit Arm Prozessor, 512 \ac{MB} \ac{SDRAM}, eingebauten \ac{WLAN}- und Bluetooth-Modulen und 40 pins für \ac{GPIO}, \ac{SPI}, \ac{I2C}, \ac{UART} und Spannungsversorgung stellt er ein umfangreiches Paket für die Interaktion mit diverser Sensorik dar. Wie bereits erwähnt, handelt es sich bei dem Raspberry Pi Zero 2 W um einen Einplatinencomputer. Das bedeutet, dass dieser alle Funktionen eines konventionellen Computers auf einer Platine bereit stellt. Mithilfe des Micro-\ac{USB} Anschlusses kann der Raspberry Pi mit externer Peripherie und externen Speichermedien kommunizieren, mithilfe des Mini \ac{HDMI} Ports kann ein externes Display verbunden werden. Die Spannungsversorgung des Raspberry Pi erfolgt über einen zweiten Micro-\ac{USB} Anschluss.
+\begin{figure}[h]
+\centering
+\missingfigure{}
+\caption{Der Raspberry Pi Zero 2 W}
+\label{fig:RaspberryPiZero2W}
+\end{figure}
+
+\subsection{Raspberry Pi OS}
+\label{subsec:tRasPiOS}
+Als Betriebssystem für den \ac{Raspi} bietet die Raspberry Pi Foundation eine auf Debian basierte Linux-Distribution namens Raspberry Pi \ac{OS} an. Raspberry Pi \ac{OS} ist in drei verschiedenen Varianten verfügbar, diese unterscheiden sich im Funktionsumfang und der Installationsgröße. Aufgrund der limitierten Rechenleistung des \ac{Raspi} Zero 2 W und der fehlenden Notwendigkeit für eine Desktop-Umgebung ist die Lite-Version am besten geeignet. Dadurch, dass eine vollwertige Linux-Distribution am Raspberry Pi läuft, kann der \ac{Raspi} Python Code interpretieren und ausführen. Außerdem inkludiert Raspberry Pi OS viele Werkzeuge, darunter das init-System \glqq systemd\grqq , womit einfach Programme mit dem Start des Betriebssystems gleichzeitig gestartet werden können. Ein anderes Werkzeug, das mitgeliefert wird ist der Paketmanager \glqq apt\grqq\ womit Pakete einfach am \ac{Raspi} installiert, entfernt oder aktualisiert werden können.
 \begin{figure}[h]
 \centering
 \missingfigure{}
@@ -41,7 +92,7 @@ Der Raspberry Pi Zero 2 W ist ein Einplatinencomputer der Raspberry Pi Foundatio
 
 \subsection{Python}
 \label{subsec:tPython}
-Python ist eine in den frühen 1990ern von Guido van Rossum erstellte Programmiersprache. Heutzutage zeichnet sich Python dadurch aus, dass es quelloffen und für jeden nutzbar ist. Außerdem nimmt Python dem Programmierenden durch die im Vergleich zu Sprachen wie C++ einfache Syntax und das integrierte Ressourcenmanagement viel Arbeit ab. Ein Nachteil von Python ist, dass es im Vergleich mit anderen Sprache wie C++ eine sehr langsame Programmiersprache ist. Aufgrund seiner Simplizität und Verfügbarkeit für Plattformen wie Microsoft Windows, macOS, Linux und FreeBSD gibt es sehr viele quelloffene Bibliotheken für Python, was das Programmieren noch weiter erleichtert. Ein weiterer Unterschied zu Sprachen wie C, C++ oder Rust besteht darin, dass Python interpretiert statt kompiliert wird. Dies hat zur Folge, dass der Code direkt ausgeführt werden kann, solange ein geeigneter Python-Interpreter und die verwendeten Bibliotheken installiert sind, ohne zuvor für jede Plattform eigens kompiliert werden zu müssen.
+Python ist eine in den frühen 1990ern von Guido van Rossum erstellte Programmiersprache. Heutzutage zeichnet sich Python dadurch aus, dass es quelloffen und für jeden nutzbar ist. Außerdem nimmt Python dem Programmierenden durch die im Vergleich zu Sprachen wie C++ einfache Syntax und das integrierte Ressourcenmanagement viel Arbeit ab. Ein Nachteil von Python ist, dass es im Vergleich mit anderen Sprache wie C++ eine sehr langsame Programmiersprache ist. Aufgrund seiner Simplizität und Verfügbarkeit für Plattformen wie Microsoft Windows, macOS, Linux und FreeBSD gibt es sehr viele quelloffene Bibliotheken für Python, was das Programmieren noch weiter erleichtert. Ein weiterer Unterschied zu Sprachen wie C, C++ oder Rust besteht darin, dass Python interpretiert statt kompiliert wird. Dies hat zur Folge, dass der Code direkt ausgeführt werden kann, solange ein geeigneter Python-Interpreter und die verwendeten Bibliotheken auf dem Zielsystem installiert sind, ohne zuvor für jede Plattform eigens kompiliert werden zu müssen. Python kann unter Raspberry Pi OS mit dem Befehl \verb|sudo apt install python| installiert werden. Ein mit Python oft verwendetes Werkzeug ist der Paketmanager \glqq pip\grqq\ , welcher die Aufgabe hat, das Verwalten von Python-Bibliotheken zu vereinfachen. pip kann am Raspberry Pi mit dem Befehl \verb|sudo apt install pip| installiert werden.
 (\cite{matthes-2019})
 
 \subsection{Qt}
