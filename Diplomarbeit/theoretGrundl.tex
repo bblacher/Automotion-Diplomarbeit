@@ -92,11 +92,37 @@ Als Betriebssystem für den \ac{Raspi} bietet die Raspberry Pi Foundation eine a
 
 \subsection{Python}
 \label{subsec:tPython}
-Python ist eine in den frühen 1990ern von Guido van Rossum erstellte Programmiersprache. Heutzutage zeichnet sich Python dadurch aus, dass es quelloffen und für jeden nutzbar ist. Außerdem nimmt Python dem Programmierenden durch die im Vergleich zu Sprachen wie C++ einfache Syntax und das integrierte Ressourcenmanagement viel Arbeit ab. Ein Nachteil von Python ist, dass es im Vergleich mit anderen Sprache wie C++ eine sehr langsame Programmiersprache ist. Aufgrund seiner Simplizität und Verfügbarkeit für Plattformen wie Microsoft Windows, macOS, Linux und FreeBSD gibt es sehr viele quelloffene Bibliotheken für Python, was das Programmieren noch weiter erleichtert. Ein weiterer Unterschied zu Sprachen wie C, C++ oder Rust besteht darin, dass Python interpretiert statt kompiliert wird. Dies hat zur Folge, dass der Code direkt ausgeführt werden kann, solange ein geeigneter Python-Interpreter und die verwendeten Bibliotheken auf dem Zielsystem installiert sind, ohne zuvor für jede Plattform eigens kompiliert werden zu müssen. Python kann unter Raspberry Pi OS mit dem Befehl \verb|sudo apt install python| installiert werden. Ein mit Python oft verwendetes Werkzeug ist der Paketmanager \glqq pip\grqq\ , welcher die Aufgabe hat, das Verwalten von Python-Bibliotheken zu vereinfachen. pip kann am Raspberry Pi mit dem Befehl \verb|sudo apt install pip| installiert werden.
+Python ist eine in den frühen 1990ern von Guido van Rossum erstellte Programmiersprache. Heutzutage zeichnet sich Python dadurch aus, dass es quelloffen und für jeden nutzbar ist. Außerdem nimmt Python dem Programmierenden durch die im Vergleich zu Sprachen wie C++ einfache Syntax und das integrierte Ressourcenmanagement viel Arbeit ab. Ein Nachteil von Python ist, dass es im Vergleich mit anderen Sprache wie C++ eine sehr langsame Programmiersprache ist. Aufgrund seiner Simplizität und Verfügbarkeit für Plattformen wie Microsoft Windows, macOS, Linux und FreeBSD gibt es sehr viele quelloffene Bibliotheken für Python, was das Programmieren noch weiter erleichtert. Ein weiterer Unterschied zu Sprachen wie C, C++ oder Rust besteht darin, dass Python interpretiert statt kompiliert wird. Dies hat zur Folge, dass der Code direkt ausgeführt werden kann, solange ein geeigneter Python-Interpreter und die verwendeten Bibliotheken auf dem Zielsystem installiert sind, ohne zuvor für jede Plattform eigens kompiliert werden zu müssen. Python kann unter Raspberry Pi OS mit dem Befehl \verb|sudo apt install python| installiert werden.
 (\cite{matthes-2019})
 
-\subsection{Qt}
-\label{subsec:tQt}
+\subsection{Python-Bibliotheken}
+\label{subsec:tLibPython}
+Eine Python-Bibliothek ist eine Sammlung von verwandten Modulen, sie beinhaltet bestimmte Codestücke, die wiederum in anderen Programmen verwendet werden. Bibliotheken machen das Programmieren für den Programmierer einfacher und beschleunigen den Prozess des Programmierens. Wenn eine Funktion bereits von jemandem programmiert wurde, muss sie in diesem Fall nicht erneut programmiert werden. Außerdem verkleinern Bibliotheken die Größe des fertigen Programmes, da eine Bibliothek nur einmal auf einem System installiert werden muss und anschließend von mehreren Programmen auf diesem System verwendet werden kann. Oft sind für bestimmte Sensoren Bibliotheken verfügbar, wodurch das Auslesen des Sensors vereinfacht wird. Ein für das Bibliotheksmanagement oft verwendetes Werkzeug ist der Paketmanager \glqq pip\grqq\ , welcher die Aufgabe hat, das Verwalten von Python-Bibliotheken zu vereinfachen. pip kann unter Raspberry Pi OS mit dem Befehl \verb|sudo apt install pip| installiert werden.
+
+\subsubsection{Python-Bibliothek: os}
+\label{subsubsec:tLibOs}
+Diese Bibliothek - dokumentiert auf \url{https://docs.python.org/3/library/os.html} - stellt verschiedene Funktionen bereit, mit welchen mit dem Betriebssystem, auf dem das Programm ausgeführt wird, interagiert werden kann. Unter anderem werden die Funktionen des lesen beziehungsweise schreiben von Dateien oder das interagieren mit Pfaden für den Programmierer vereinfacht. Alle Funktionen dieser Bibliothek funktionieren unter allen von Python unterstützten Betriebssystemen.
+
+\subsubsection{Python-Bibliothek: shutil}
+\label{subsubsec:tShutil}
+Die Bibliothek \glqq shutil\grqq\ - dokumentiert unter \url{https://docs.python.org/3/library/shutil.html} - ermöglicht das interagieren mit Dateien, beispielsweise können mithilfe dieser Bibliothek mehrere Dateien gleichzeitig kopiert oder auch entfernt werden. Für das Kopieren von Dateien werden mehrere verschiedene Optionen angeboten, diese unterscheiden sich hauptsächlich daran, dass bei einigen die Metadaten wie zum Beispiel das Erstell- und Bearbeitungsdatum ebenfalls kopiert werden.
+
+\subsubsection{Python-Bibliothek: NumPy}
+\label{subsubsec:tNumpy}
+
+
+\subsubsection{Python-Bibliothek: imusensor}
+\label{subsubsec:tLibImusensor}
+Die Python-Bibliothek \glqq imusensor\grqq\ (\url{https://github.com/niru-5/imusensor/tree/master}) stellt verschiedene Möglichkeiten zur Kommunikation zwischen Raspberry Pi und MPU9250 bereit. Einerseits werden Funktionen zur Kalibrierung des MPU9250 angeboten, andererseits werden Funktionen zur Auslesung und Fusion der Messwerte bereitgestellt. Für die Sensorfusion bietet diese Bibliothek zwei verschiedene Filter an, Kalman und Madgwick. Während Kalman simpel ist und nicht sehr viele Prozessorressourcen benötigt, stellt Madgwick glattere Werte bereit, benötigt dafür aber mehr Rechenaufwand.
+
+\subsubsection{Python-Bibliothek: PyQtGraph}
+\label{subsubsec:tPyQtGraph}
+
+\subsubsection{Python-Bibliothek: py-staticmaps}
+\label{subsubsec:tStaticmaps}
+
+\subsubsection{Python-Bibliothek: Qt}
+\label{subsubsec:tQt}
 Qt ist eine von der Qt Company entwickelte Bibliothek für die Entwicklung von grafischen Oberflächen. Sie ist wie Python plattformübergreifend und unterstützt unter anderem Microsoft Windows, macOS, Unixartige Betriebssysteme mit X11, Linux mit Wayland, Android und iOS. Qt unterstützt ebenfalls die Entwicklung mit verschiedenen Programmiersprachen, darunter Python, C++ und Qt Modeling Language, zusätzlich wird Unterstützung für Rust und Go von der Qt-Community angeboten. Qt ist wie Python Quelloffen und kann für die Open-Source-Programmierung frei verwendet werden. Die neueste Qt-Python Bibliothek heißt PySide6, mit nur fünf Zeilen Python-Code kann ein leeres Fenster erstellt werden.
 \begin{figure}[h]
 \centering
