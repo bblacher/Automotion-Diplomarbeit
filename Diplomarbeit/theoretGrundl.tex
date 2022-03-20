@@ -69,10 +69,17 @@ Wie der Name vermuten lässt, ist das Ausgangssignal eines analogen Hall-Sensors
 
 \subsection{Infrarot-Lichtschranke}
 \label{subsec:tIR}
+Lichtschranken gehören zur sogenannten Optoelektronik und geben ein Signal aus, wenn ein Lichtstrahl unterbrochen wird. Ein Lichtschranke besteht aus einem Sender und einem Empfänger. Der Sender besteht grundsätzlich aus einer Leuchtdiode, wobei hier zwischen sichtbarem und unsichtbarem Licht unterschieden wird. Als, für das menschliche Auge, unsichtbare Lichtquelle werden meist \ac{IR}-Leuchtdioden eingesetzt, welche eine Wellenlänge von 880-940 Nanometer aufweisen. Der Empfänger einer Lichtschranke besteht grundsätzlich aus einer Photodiode, wessen Signal zusätzlich verstärkt wird. Außerdem wird zwischen verschiedenen Konfigurationen des Senders und Empfängers unterschieden, wobei hier auf die sogenannte Einweg Konfiguration eingegangen wird. Der Sender und Empfänger stehen sich dabei direkt gegenüber. In Form einer \ac{IR}-Gabellichtschranke im Hobby-Elektronik Bereich befinden sich diese auf einer gemeinsamen Platine (siehe Abbildung \ref{fig:IR}) und bei einer Unterbrechung des Lichtstrahls wird der Ausgang auf logisch 1, beziehungsweise, in diesem Fall, +3.3 Volt gesetzt.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.2]{IR.png}
+\caption{IR-Gabellichtschranke}
+\label{fig:IR}
+\end{figure}
 
 \subsection{Raspberry Pi Zero 2 W}
 \label{subsec:tRasPi}
-Der Raspberry Pi Zero 2 W ist ein Einplatinencomputer der Raspberry Pi Foundation. Mit einem 1 \ac{GHz} quad-core 64-bit Arm Prozessor, 512 \ac{MB} \ac{SDRAM}, eingebauten \ac{WLAN}- und Bluetooth-Modulen und 40 pins für \ac{GPIO}, \ac{SPI}, \ac{I2C}, \ac{UART} und Spannungsversorgung stellt er ein umfangreiches Paket für die Interaktion mit diverser Sensorik dar. Wie bereits erwähnt, handelt es sich bei dem Raspberry Pi Zero 2 W um einen Einplatinencomputer. Das bedeutet, dass dieser alle Funktionen eines konventionellen Computers auf einer Platine bereit stellt. Mithilfe des Micro-\ac{USB} Anschlusses kann der Raspberry Pi mit externer Peripherie und externen Speichermedien kommunizieren, mithilfe des Mini \ac{HDMI} Ports kann ein externes Display verbunden werden. Die Spannungsversorgung des Raspberry Pi erfolgt über einen zweiten Micro-\ac{USB} Anschluss.
+Der Raspberry Pi Zero 2 W ist ein Einplatinencomputer der Raspberry Pi Foundation. Mit einem 1 \ac{GHz} quad-core 64-bit Arm Prozessor, 512 \ac{MB} \ac{SDRAM}, eingebauten \ac{WLAN}- und Bluetooth-Modulen und 40 Pins für \ac{GPIO}, \ac{SPI}, \ac{I2C}, \ac{UART} und Spannungsversorgung stellt er ein umfangreiches Paket für die Interaktion mit diverser Sensorik dar. Wie bereits erwähnt, handelt es sich bei dem Raspberry Pi Zero 2 W um einen Einplatinencomputer. Das bedeutet, dass dieser alle Funktionen eines konventionellen Computers auf einer Platine bereit stellt. Mithilfe des Micro-\ac{USB} Anschlusses kann der Raspberry Pi mit externer Peripherie und externen Speichermedien kommunizieren, mithilfe des Mini \ac{HDMI} Ports kann ein externes Display verbunden werden. Die Spannungsversorgung des Raspberry Pi erfolgt über einen zweiten Micro-\ac{USB} Anschluss.
 \begin{figure}[h]
 \centering
 \missingfigure{}
