@@ -1,2 +1,8 @@
 \section{Drehzahlmessung}
 \label{sec:RPM}
+Die individuelle Drehzahl aller vier Räder des Modellautos soll erfasst werden. Dafür sind die Auswahl verschiedener Sensortechnologien, die Konstruktion, Fertigung und Montage der Halterungen sowie die Programmierung des Einplatinencomputers notwendig.
+
+\subsection{Wahl der Sensortechnologie}
+\label{subsec:RPMchoice}
+Aufgrund des Hinterradantriebes des Modellautos sind für die vorderen und hinteren Räder unterschiedliche Sensortypen erforderlich. Durch die Federung des Fahrgestells und der Lenkung der Vorderräder, kommen einige Herausforderungen bei der Sensorwahl und Montage auf. Die Drehzahlerfassung der Hinterräder erfolgt deswegen direkt an den Ausgangswellen des Differentials. Bei den Vorderrädern muss die Drehzahl direkt an den Rädern gemessen werden, da diese nur mitlaufen und keine Antriebswelle aufweisen.\\
+Für die Drehzahlmessung der Hinterräder werden Infrarot-Gabellichtschranken, wie in Sektion \ref{subsec:tIR} beschrieben, verwendet. Diese geben die Versorgungsspannung von +3.3 V aus, wenn der \ac{IR}-Strahl unterbrochen wird. Auf der Differentialwelle ist ein Ring mit vier länglich ausgeführten Extrusionen angebracht, welche den Strahl pro Umdrehung der Welle vier mal unterbrechen.
