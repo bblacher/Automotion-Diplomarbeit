@@ -92,7 +92,7 @@ Der Raspberry Pi Zero 2 W ist ein Einplatinencomputer der Raspberry Pi Foundatio
 Als Betriebssystem für den \ac{Raspi} bietet die Raspberry Pi Foundation eine auf Debian basierte Linux-Distribution namens Raspberry Pi \ac{OS} an. Raspberry Pi \ac{OS} ist in drei verschiedenen Varianten verfügbar, diese unterscheiden sich im Funktionsumfang und der Installationsgröße. Aufgrund der limitierten Rechenleistung des \ac{Raspi} Zero 2 W und der fehlenden Notwendigkeit für eine Desktop-Umgebung ist die Lite-Version am besten geeignet. Dadurch, dass eine vollwertige Linux-Distribution am Raspberry Pi läuft, kann der \ac{Raspi} Python Code interpretieren und ausführen. Außerdem inkludiert Raspberry Pi OS viele Werkzeuge, darunter das init-System \glqq systemd\grqq , womit einfach Programme mit dem Start des Betriebssystems gleichzeitig gestartet werden können. Ein anderes Werkzeug, das mitgeliefert wird ist der Paketmanager \glqq apt\grqq\ womit Pakete einfach am \ac{Raspi} installiert, entfernt oder aktualisiert werden können.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{raspineofetch.png}
+\includegraphics[scale=0.75]{raspineofetch.png}
 \caption{Das Commandline-Tool neofetch am Raspberry Pi Zero 2 W}
 \label{fig:pineofetch}
 \end{figure}
@@ -116,7 +116,7 @@ Die Bibliothek \glqq shutil\grqq\ - dokumentiert unter \url{https://docs.python.
 
 \subsubsection{Python-Bibliothek: NumPy}
 \label{subsubsec:tNumpy}
-
+NumPy (\url{https://numpy.org/}) ist eine Python-Bibliothek, welche viele wissenschaftliche Funktionen wie beispielsweise das Bearbeiten von Arrays, Matrizen und Vektoren vereinfacht. Unter anderem können mithilfe von NumPy die Inhalte von ganzen Arrays mit einer Funktion in einen anderen Datentyp umgewandelt werden. Außerdem kann NumPy einzelne Spalten oder Zeilen aus Arrays ausschneiden und in andere einfügen. Weitere Funktionen von NumPy sind ein eingebauter Zufallszahlengenerator, Fouriertransformationen und das Berechnen von linearer Algebra. NumPy ist teilweise in Python und teilweise in C geschrieben. Alle Funktionen die zeitkritisch sind sind in C implementiert, während Funktionen, bei welchen die Zeit keine Rolle spielt in Python geschrieben sind.
 
 \subsubsection{Python-Bibliothek: imusensor}
 \label{subsubsec:tLibImusensor}
@@ -124,6 +124,7 @@ Die Python-Bibliothek \glqq imusensor\grqq\ (\url{https://github.com/niru-5/imus
 
 \subsubsection{Python-Bibliothek: PyQtGraph}
 \label{subsubsec:tPyQtGraph}
+PyQtGraph (https://www.pyqtgraph.org/) ist eine auf Qt und NumPy basierende Python-Bibliothek. Aufgrund ihrer Basis ist diese Bibliothek mit Qt kompatibel und kann mit in bestehende Qt-Anwendungen integriert werden. PyQtGraph stellt viele Funktionen bereit, darunter sowohl das \ac{2D}-Plotten als auch das Zeichnen von \ac{3D} Grafiken mithilfe von OpenGL. Zu den \ac{2D}-Funktionen von PyQtGraph zählen unter anderem Linien- und Streudiagramme mit Skalierungs- und Verschiebungsmöglichkeiten und das Zeichnen von Echtzeitdaten. Zu den \ac{3D}-Funktionen zählen das Rendern von Volumenkörpern, Oberflächen- und \ac{3D}-Streuplots und die Möglichkeit diese zu rotieren oder zu skalieren. Während PyQtGraph in Python geschrieben ist, ist die Bibliothek trotzdem hochperformant, da für die benötigten Berechnungen NumPy verwendet wird, welches wie in \ref{subsubsec:tNumpy} beschrieben C-Code verwendet, um zeitkritische Berechnungen durchzuführen.
 
 \subsubsection{Python-Bibliothek: py-staticmaps}
 \label{subsubsec:tStaticmaps}
