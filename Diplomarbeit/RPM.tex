@@ -5,15 +5,25 @@ Die individuelle Drehzahl aller vier Räder des Modellautos soll erfasst werden.
 \subsection{Wahl der Sensortechnologie}
 \label{subsec:RPMchoice}
 Aufgrund des Hinterradantriebes des Modellautos sind für die vorderen und hinteren Räder unterschiedliche Sensortypen erforderlich. Durch die Federung des Fahrgestells und der Lenkung der Vorderräder, kommen einige Herausforderungen bei der Sensorwahl und Montage auf. Die Drehzahlerfassung der Hinterräder erfolgt deswegen direkt an den Radantriebswellen des Differentials. Bei den Vorderrädern muss die Drehzahl an den Rädern gemessen werden, da diese nur mitlaufen und keine Welle aufweisen.\\
+
 \subsubsection{Sensortechnologie für Hinterräder}
 \label{subsubsec:RPMchoiceRear}
 Für die Drehzahlmessung der Hinterräder werden Infrarot-Gabellichtschranken, wie in Sektion \ref{subsec:tIR} beschrieben, verwendet. Diese geben die Versorgungsspannung von +3.3 V aus, wenn der \ac{IR}-Strahl unterbrochen wird. Auf der zu messenden Welle ist folglich eine Rotationsscheibe anzubringen, welche den \ac{IR}-Strahl periodisch unterbricht. Über die Zeit, die zwischen den einzelnen Unterbrechungen vergeht, lässt sich dann die Drehzahl ermitteln.\\
+
 \subsubsection{Sensortechnologie für Vorderräder}
 \label{subsubsec:RPMchoiceFront}
 Wie bereits erwähnt ist es nur möglich, die Drehzahl der Vorderräder direkt am Rad zu erfassen. Eine Möglichkeit dafür wäre ebenfalls \ac{IR}-Sensoren zu verwenden. Hier wäre eine Ausführung mit parallel platziertem Sender und Empfänger, anstatt gegenüberliegend, notwendig. Auf diese Art und Weise kann eine schwarze Scheibe am Rad fixiert werden, welche weiße Segmente aufweist. Diese Segmente reflektieren den \ac{IR}-Strahl bei jeder Vorbeibewegung am Sensor. Dadurch kann wieder über die Zeit, die zwischen den Reflexionen vergeht, die Drehzahl ermittelt werden. Unter Berücksichtigung der Nachteile von \ac{IR}-Sensoren und dem Einbauort an den Vorderrädern, treten mehrere potentielle Probleme auf. Zum einen wäre es möglich, dass das Sonnenlicht mit dessen \ac{IR}-Anteil, vom Empfänger des Sensors fälschlicherweise erkannt wird. Bei den Vorderrädern ist die Montageposition relativ offen und ein direkter Einfall von Außenlicht wäre dadurch möglich. Aufgrund dieser ungeschützten Lage, wäre es auch denkbar, dass zum Beispiel Staub oder feiner Sand am Sender, beziehungsweise Empfänger, des \ac{IR}-Sensors haften bleibt und diesen funktionsunfähig macht.\\
 Eine robuste und zuverlässige Lösung für die Drehzahlerfassung der Vorderräder sind digitale Hall-Sensoren, welche in Sektion \ref{subsec:tHall} bereits erklärt wurden. Um diese implementieren zu können wird ebenfalls eine Scheibe an der Innenseite der Räder montiert, welche allerdings Permanentmagneten aufweist.
 
 
-
 \subsection{Montage der Drehzahlsensoren}
-Auf der Differentialwelle ist ein Ring mit vier länglich ausgeführten Extrusionen angebracht, welche den Strahl pro Umdrehung der Welle vier mal unterbrechen.
+\label{subsec:RPMmount}
+Um die Sensoren sowie die Rotationsscheiben zu montieren sind diese zu konstruieren, mit einer gängigen 3D-Druck Methode zu fertigen und anschließend an einer geeigneten Stelle am Auto zu fixieren. Außerdem muss ein System zur Mikrocontroller-Einbindung gewählt und umgesetzt werden.
+
+\subsubsection{Sensormontage für Hinterräder}
+\label{subsubsec:RPMmountRear}
+Die Drehzahlerfassung der Hinterräder erfolgt an den Radantriebswellen des Differentials, worauf jeweils ein Ring mit vier länglich ausgeführten Extrusionen angebracht ist, wodurch der \ac{IR}-Strahl vier Mal pro Umdrehung unterbrochen wird. (Siehe Abbildung \ref) Um den \ac{IR}-Sensor zu montieren wird eine spezielle Halterung mithilfe von \ac{CAD} konstruiert. Diese wird mit dem in Sektion \ref{subsec:tDUP} beschriebenen \ac{DUP}-Verfahren gefertigt. Dazu wird ein spezielles mechanisch bearbeitbares Harz verwendet, welches es ermöglicht unter anderem Gewinde in dementsprechende Bohrungen zu schneiden. Der Sensor wird dann mit einer M3-Schraube mit der Halterung verbunden. Die Halterung selbst wurde so konstruiert, dass sie mit einem Teil des Autos über Formschluss sowie zwei Schrauben fixiert wird.\\
+
+\subsubsection{Sensormontage für Vorderräder}
+\label{subsubsec:RPMmountFront}
+Wie bereits erwähnt, erfolgt die Messung der Vorderrad-Drehzahl an den Rädern direkt. An der Innenseite dieser, ist eine Scheibe mit vier eingelassenen Permanentmagneten angebracht, wodurch der Hall-Sensor pro Umdrehung vier Mal ausschlägt. Der Sensor selbst muss am selben Bauteil befestigt werden, woran auch das Rad befestigt ist. Nur so kann eine Messung erfolgen, da durch die Lenkung und Federung der Räder die Position der Scheibe relativ zum Sensor nicht konstant wäre. Die Halterung für den Sensor sowie die Scheibe, wurden mithilfe von \ac{CAD} konstruiert und anschließend mit dem in Sektion \ref{subsec:tFDM} beschriebenen \ac{FDM}-Verfahren gefertigt. Die Dauermagneten sind in die Einlassungen auf der Scheibe eingeklebt und die Scheibe selbst ist ebenfalls per Verklebung an der Radinnenseite befestigt. Der Hall-Sensor ist mit einer M3-Schraube an der Halterung fixiert und die Sensorhalterung ist mit zwei weiteren Schrauben, welche an der Montagestelle bereits von einem Autoteil verwendet werden, montiert. Eine robuste Verbindung des Sensors ist hier besonders wichtig, aufgrund der vielseitigen Bewegungen dieser.
