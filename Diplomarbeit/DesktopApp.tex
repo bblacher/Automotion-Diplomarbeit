@@ -3,7 +3,14 @@
 Diese Sektion beschreibt die Bedienung und Funktionsweise der eigens entwickelten Desktopanwendung, welche zur einfachen Visualisierung und Auswertung der Daten dient.
 \subsection{Grundlagen}
 \label{subsec:VisGrundlagen}
-Für die Programmierung der Desktopanwendung wird ebenfalls Python verwendet, in diesem Fall wird zusätzlich auch Qt verwendet. Qt ist, wie in Sektion \ref{subsubsec:tQt} beschreiben, eine Bibliothek zur Entwicklung von grafischen Oberflächen, was eine Erleichterung in der Entwicklung von Desktopanwendungen darstellt. Die Desktopanwendung dieser Diplomarbeit ist in vier Ansichten aufgeteilt. Wird das Programm gestartet, wird zunächst die \glqq Overview\grqq angezeigt. In dieser Ansicht sind ein \ac{3D}-Modell des Autos und drei Schaltflächen zu sehen. Die Schaltflächen führen zu den anderen Ansichten, darunter die \glqq Table View\grqq , die \glqq Plot View\grqq \ und die \glqq Map View\grqq .
+Für die Programmierung der Desktopanwendung wird ebenfalls Python verwendet, in diesem Fall wird zusätzlich auch Qt verwendet. Qt ist, wie in Sektion \ref{subsubsec:tQt} beschreiben, eine Bibliothek zur Entwicklung von grafischen Oberflächen, was eine Erleichterung in der Entwicklung von Desktopanwendungen darstellt. Die Desktopanwendung dieser Diplomarbeit ist in vier Ansichten aufgeteilt. Wird das Programm gestartet, wird zunächst die \glqq Overview\grqq\ angezeigt. In dieser Ansicht sind ein \ac{3D}-Modell des Autos und drei Schaltflächen zu sehen. Die Schaltflächen führen zu den anderen Ansichten, darunter die \glqq Table View\grqq , die \glqq Plot View\grqq \ und die \glqq Map View\grqq . Die Anwendung verfügt außerdem über eine Werkzeugleiste am oberen Rand des Fensters, welche die Funktionen \glqq Schließen\grqq\ und \glqq Vollbild\grqq\ sowie Verknüpfungen zu den Ansichten \glqq Overview\grqq , \glqq Table View\grqq , \glqq Plot View\grqq\  und \glqq Map View\grqq\ enthält.
+\begin{figure}[h]
+\centering
+\missingfigure{}
+\caption{Übersichtsseite der Desktopanwendung}
+\label{fig:Overview}
+\end{figure}
+\\
 \subsection{Table View}
 \label{subsec:VisTableView}
 Eine weitere Ansicht ist, wie bereits erwähnt, die \glqq Table View\grqq , in welcher eine Tabelle mit allen Messwerten der geöffneten Datei zu sehen ist. In der Table View sind wie in Abbildung \ref{fig:TableView} abgebildet am oberen Rand der Tabelle Identifikatoren zu sehen, welche die Aufgabe haben, die Werte realen Größen zuordenbar zu machen.
@@ -43,10 +50,10 @@ Außerdem kann in dem mit einem \glqq Rechtsklick\grqq \ aufrufbaren Kontextmen�
 Die \glqq Plot View\grqq\ wird mithilfe der in Sektion \ref{subsubsec:tPyQtGraph} beschriebenen Python-Bibliothek \glqq PyQtGraph\grqq \ gezeichnet. Dazu werden zunächst die Zeitstempel aus dem Datenfile den Zeitwerten der Abszisse zugeordnet. Anschließend werden alle Datensets, die Fehler enthalten aus dem Datenpool entfernt. Ist dies geschehen, werden die Achsenbeschriftungen, welche in den Plot-Einstellungen eingestellt wurden, zu den jeweiligen Achsen zugeordnet und der Graph initialisiert. Beim Initialisieren des Graphen werden die Werte in den Graphen eingezeichnet und den jeweiligen Achsen zugeordnet. Sollten Einstellungen im Einstellungsfenster geändert werden, wird dieser Prozess erneut durchgeführt, um den Graph an die neue Achsbelegung anzupassen.
 \subsection{Map View}
 \label{subsec:VisMapView}
-Die \glqq Map View\grqq\ hat die Aufgabe, dem Nutzer eine grafische Darstellung der aufgezeichneten \ac{GPS}-Koordinaten zu bieten. Für diese Darstellung wird eine aktive Internetverbindung benötigt, um die Karte herunterzuladen.
+Die \glqq Map View\grqq\ hat die Aufgabe, dem Nutzer eine grafische Darstellung der aufgezeichneten \ac{GPS}-Koordinaten zu bieten. Für diese Darstellung wird eine aktive Internetverbindung benötigt, um die Karte herunterzuladen, sollten die Kartenabschnitte zuvor noch nie heruntergeladen worden sein.
 \subsubsection{Funktionen der Map View}
 \label{subsubsec:MapViewFunktion}
-Um die Werte darzustellen, werden alle Längen- und Breitengrade aus der geöffneten Datei extrahiert, dynamisch die benötigten \ac{OSM} Tiles aus dem Internet heruntergeladen und anschließend ein Pfad aus den Koordinaten auf die Karte gezeichnet. Ein Beispiel für eine solche Karte ist in Abbildung 
+Um die Werte darzustellen, werden alle Längen- und Breitengrade aus der geöffneten Datei extrahiert, dynamisch die benötigten \ac{OSM} Tiles aus dem Internet heruntergeladen und anschließend ein Pfad aus den Koordinaten auf die Karte gezeichnet. Die für die Darstellung benötigten Kartenstücke werden außerdem auf dem Computer, auf dem das Programm ausgeführt wird zur Wiederverwendung zwischengespeichert. Ein Beispiel für eine fertig gezeichnete Karte ist in Abbildung 
 \ref{fig:OSMMapView} zu sehen. Wenn das Bedürfnis besteht, die Karte für das Verwenden an einem späteren Zeitpunkt abzuspeichern, kann dies mit einem Klick auf den Knopf \glqq Save Image\grqq\ getan werden. Somit wird ein Dialogfenster zur Auswahl des Speicherortes geöffnet und anschließend wird die Karte als \ac{SVG} am gewählten Ort abgespeichert.
 \begin{figure}[h]
 \centering
