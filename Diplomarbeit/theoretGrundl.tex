@@ -99,7 +99,7 @@ Als Betriebssystem für den \ac{Raspi} bietet die Raspberry Pi Foundation eine a
 
 \subsection{Python}
 \label{subsec:tPython}
-Python ist eine in den frühen 1990ern von Guido van Rossum erstellte Programmiersprache. Heutzutage zeichnet sich Python dadurch aus, dass es quelloffen und für jeden nutzbar ist. Außerdem nimmt Python dem Programmierenden durch die im Vergleich zu Sprachen wie C++ einfache Syntax und das integrierte Ressourcenmanagement viel Arbeit ab. Ein Nachteil von Python ist, dass es im Vergleich mit anderen Sprache wie C++ eine sehr langsame Programmiersprache ist. Aufgrund seiner Simplizität und Verfügbarkeit für Plattformen wie Microsoft Windows, macOS, Linux und FreeBSD gibt es sehr viele quelloffene Bibliotheken für Python, was das Programmieren noch weiter erleichtert. Ein weiterer Unterschied zu Sprachen wie C, C++ oder Rust besteht darin, dass Python interpretiert statt kompiliert wird. Dies hat zur Folge, dass der Code direkt ausgeführt werden kann, solange ein geeigneter Python-Interpreter und die verwendeten Bibliotheken auf dem Zielsystem installiert sind, ohne zuvor für jede Plattform eigens kompiliert werden zu müssen. Python kann unter Raspberry Pi OS mit dem Befehl \verb|sudo apt install python| installiert werden.
+Python ist eine in den frühen 1990ern von Guido van Rossum erstellte Programmiersprache. Heutzutage zeichnet sich Python dadurch aus, dass es quelloffen und für jeden nutzbar ist. Außerdem nimmt Python dem Programmierenden durch die im Vergleich zu Sprachen wie C++ einfache Syntax und das integrierte Ressourcenmanagement viel Arbeit ab. Ein Nachteil von Python ist, dass es im Vergleich mit anderen Sprache wie C++ eine sehr langsame Programmiersprache ist. Aufgrund seiner Simplizität und Verfügbarkeit für Plattformen wie Microsoft Windows, macOS, Linux und FreeBSD gibt es sehr viele quelloffene Bibliotheken für Python, was das Programmieren noch weiter erleichtert. Ein weiterer Unterschied zu Sprachen wie C, C++ oder Rust besteht darin, dass Python interpretiert statt kompiliert wird. Dies hat zur Folge, dass der Code direkt ausgeführt werden kann, solange ein geeigneter Python-Interpreter und die verwendeten Bibliotheken auf dem Zielsystem installiert sind, ohne zuvor für jede Plattform eigens kompiliert werden zu müssen. Der Python Interpreter kann unter Raspberry Pi OS mit dem Befehl \verb|sudo apt install python| installiert werden. Um ein Python-Programm auszuführen, kann der Befehl \verb|python [Dateiname]| verwendet werden.
 (\cite{matthes-2019})
 
 \subsection{Python Bibliotheken}
@@ -109,6 +109,10 @@ Eine Python Bibliothek ist eine Sammlung von verwandten Modulen, sie beinhaltet 
 \subsubsection{Python Bibliothek: os}
 \label{subsubsec:tLibOs}
 Diese Bibliothek - dokumentiert auf \url{https://docs.python.org/3/library/os.html} - stellt verschiedene Funktionen bereit, mit welchen mit dem Betriebssystem, auf dem das Programm ausgeführt wird, interagiert werden kann. Unter anderem werden die Funktionen des lesen beziehungsweise schreiben von Dateien oder das interagieren mit Pfaden für den Programmierer vereinfacht. Alle Funktionen dieser Bibliothek funktionieren unter allen von Python unterstützten Betriebssystemen.
+
+\subsubsection{Python Bibliothek: datetime}
+\label{subsubsec:tLibDatetime}
+
 
 \subsubsection{Python Bibliothek: shutil}
 \label{subsubsec:tShutil}
