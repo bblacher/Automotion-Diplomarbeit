@@ -44,8 +44,8 @@ Wie bereits erwähnt, erfolgt die Messung der Vorderrad-Drehzahl an den Rädern 
 
 \begin{figure}[h]
 \centering
-\missingfigure{}
-\caption{Rotationsscheibe mit Dauermagneten zur Drehzahlmessung}
+\includegraphics[scale=0.2]{RPMfrontDisc.png}
+\caption{Rotationsscheibe mit Dauermagneten in Vorderrad}
 \label{fig:RPMfrontDisc}
 \end{figure}
 
@@ -56,12 +56,21 @@ Wie bereits erwähnt, erfolgt die Messung der Vorderrad-Drehzahl an den Rädern 
 \label{fig:RPMfrontMount}
 \end{figure}
 
+\newpage
 \subsection{Programmatische Implementation der Drehzahlsensoren}
 \label{subsec:RPMprogram}
 Die \ac{IR}- sowie die Hall-Sensoren liefern prinzipiell ein Rechtecksignal. Eine steigende Flanke entspricht dabei einer Unterbrechung des Magnetfeldes, beziehungsweise einer Erkennung des Magnetfeldes. Die Zeit, die zwischen den steigenden Flanken vergeht, ist  die Zeit, die für ein Viertel einer Umdrehung des Rades benötigt wird. Mit steigender Drehzahl nimmt diese Zeit somit ab und die Periodendauer des Signals wird kürzer. Die Signalleitung der Drehzahlsensoren ist an den \ac{GPIO}-Pins des RaspberryPi angeschlossen. Somit kann mithilfe eines Interrupts eine steigende Flanke an so einem \ac{GPIO} erkannt werden, wodurch es möglich ist, die Zeit seit der letzten steigenden Flanke festzuhalten.\\
-Ein Interrupt ist eine Unterbrechung des normalen Ablaufs des Programmes, woraufhin eines sogenannte Interrupt-Serviceroutine, auch callback genannt, ausgeführt wird. Dieser Interrupt kann zum Beispiel über eine Zustandsänderung an diesen \ac{GPIO}-Pins ausgelöst werden. Für die Erfassung der Drehzahl werden für jeden Sensor, also insgesamt vier dieser Interrupts erstellt. Diese erfassen eine steigende Flanke der Drehzahlsensoren und führen die callback Routine für den jeweiligen Sensor aus. In dieser wird zunächst die aktuelle Zeit, mithilfe der in Sektion \ref{subsubsec:tTime} beschriebenen Bibliothek time auf eine Variable geschrieben. Die Differenz der letzten Zeit und der Aktuellen wird anschließend berechnet. Danach wird für den nächsten Routineaufruf die aktuelle Zeit auf die Variable der "alten" Zeit geschrieben.\\
-Aus dieser Zeitdifferenz wird die Drehzahl errechnet. Dazu wird zunächst der Kehrwert dieser Zeit berechnet, was im Grunde genommen direkt einer Drehzahl entspricht. Dieser Wert wird mit 60 multipliziert um die Einheit 1/Minuten zu erhalten. Da die umgerechnete Zeit allerdings für eine Viertelumdrehung gilt, muss das Ergebnis durch vier dividiert werden.
+Ein Interrupt ist eine Unterbrechung des normalen Ablaufs des Programmes, woraufhin eines sogenannte Interrupt-Serviceroutine, auch callback genannt, ausgeführt wird. Dieser Interrupt kann zum Beispiel über eine Zustandsänderung an diesen \ac{GPIO}-Pins ausgelöst werden. Für die Erfassung der Drehzahl werden für jeden Sensor, also insgesamt vier dieser Interrupts erstellt. Diese erfassen eine steigende Flanke der Drehzahlsensoren und führen die callback Routine für den jeweiligen Sensor aus. In dieser wird zunächst die aktuelle Zeit, mithilfe der in Sektion \ref{subsubsec:tTime} beschriebenen Bibliothek time, auf eine Variable geschrieben. Die Differenz der letzten Zeit und der Aktuellen wird anschließend berechnet. Danach wird für den nächsten Routineaufruf die aktuelle Zeit auf die Variable der vorherigen \glqq alten\grqq\ Zeit geschrieben.\\
+Aus dieser Zeitdifferenz wird die Drehzahl errechnet. Dazu wird zunächst der Kehrwert dieser Zeit berechnet, was im Grunde genommen direkt einer Drehzahl entspricht. Dieser Wert wird mit 60 multipliziert um die Einheit $\frac{1}{min}$ zu erhalten. Da die umgerechnete Zeit allerdings für eine Viertelumdrehung gilt, muss das Ergebnis durch vier dividiert werden.
 \begin{equation}
 rpm=\frac{\frac{60}{delta\_time}}{4}
-\label{eqn:imuFx}
+\label{eqn:rpm}
 \end{equation}
+
+Zusätzlich wird aus den Drehzahlen der Räder die Geschwindigkeit des Fahrzeuges errechnet. Dazu wird der Durchmesser der Vorderräder in Metern mit $\pi$ und dem Mittelwert der Drehzahl der Vorderräder in Umdrehungen pro Sekunde multipliziert. Das Ergebnis ist die Fahrgeschwindigkeit in Metern pro Sekunde.
+\begin{equation}
+v=D_{Wheel}\cdot\pi\cdot\frac{n_{WheelR}+n_{WheelL}}{2}
+\label{eqn:velocity}
+\end{equation}
+
+
