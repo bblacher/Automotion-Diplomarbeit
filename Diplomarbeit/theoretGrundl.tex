@@ -104,11 +104,15 @@ Python ist eine in den frühen 1990ern von Guido van Rossum erstellte Programmie
 
 \subsection{Python Bibliotheken}
 \label{subsec:tLibPython}
-Eine Python Bibliothek ist eine Sammlung von verwandten Modulen, sie beinhaltet bestimmte Codestücke, die wiederum in anderen Programmen verwendet werden kann. Bibliotheken machen das Programmieren für den Programmierer einfacher und beschleunigen den Prozess des Programmierens. Wenn eine Funktion bereits von jemandem programmiert wurde, muss sie in diesem Fall nicht erneut programmiert werden. Außerdem verkleinern Bibliotheken die Größe des fertigen Programmes, da eine Bibliothek nur einmal auf einem System installiert werden muss und anschließend von mehreren Programmen auf diesem System verwendet werden kann. Oft sind für bestimmte Sensoren Bibliotheken verfügbar, wodurch das Auslesen des Sensors vereinfacht wird. Ein für das Bibliotheksmanagement oft verwendetes Werkzeug ist der Paketmanager \glqq pip\grqq\ , welcher die Aufgabe hat, das Verwalten von Python-Bibliotheken zu vereinfachen. pip kann unter Raspberry Pi OS mit dem Befehl \verb|sudo apt install pip| installiert werden.
+Eine Python Bibliothek ist eine Sammlung von verwandten Modulen, sie beinhaltet bestimmte Codestücke, die wiederum in anderen Programmen verwendet werden können. Bibliotheken machen das Programmieren für den Programmierer einfacher und beschleunigen den Prozess des Programmierens. Wenn eine Funktion bereits von jemandem programmiert wurde, muss sie in diesem Fall nicht erneut programmiert werden. Außerdem verkleinern Bibliotheken die Größe des fertigen Programmes, da eine Bibliothek nur einmal auf einem System installiert werden muss und anschließend von mehreren Programmen auf diesem System verwendet werden kann. Oft sind für bestimmte Sensoren Bibliotheken verfügbar, wodurch das Auslesen des Sensors vereinfacht wird. Ein für das Bibliotheksmanagement oft verwendetes Werkzeug ist der Paketmanager \glqq pip\grqq\ , welcher die Aufgabe hat, das Verwalten von Python-Bibliotheken zu vereinfachen. pip kann unter Raspberry Pi OS mit dem Befehl \verb|sudo apt install pip| installiert werden.
 
 \subsubsection{Python Bibliothek: os}
 \label{subsubsec:tLibOs}
 Diese Bibliothek - dokumentiert auf \url{https://docs.python.org/3/library/os.html} - stellt verschiedene Funktionen bereit, mit welchen mit dem Betriebssystem, auf dem das Programm ausgeführt wird, interagiert werden kann. Unter anderem werden die Funktionen des lesen beziehungsweise schreiben von Dateien oder das interagieren mit Pfaden für den Programmierer vereinfacht. Alle Funktionen dieser Bibliothek funktionieren unter allen von Python unterstützten Betriebssystemen.
+
+\subsubsection{Python Bibliothek: time}
+\label{subsubsec:tLibTime}
+Die Bibliothek \glqq time\grqq\ bietet eine Vielzahl an Funktionen, welche für Zeit-spezifische Python-Programme hilfreich sind. 
 
 \subsubsection{Python Bibliothek: datetime}
 \label{subsubsec:tLibDatetime}
