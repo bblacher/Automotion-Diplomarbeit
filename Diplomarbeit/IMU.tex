@@ -27,7 +27,13 @@ Aufgrund des inkludierten Magnetometers und dem im Vergleich zum BNO055 niedrige
 
 \subsection{Montage der inertialen Messeinheit}
 \label{subsec:IMUmount}
-Um eine korrekte Erfassung der Messdaten zu gewährleisten muss der MPU9250 mittig entlang der Drehachse in Fahrtrichtung angebracht werden. Dazu wird eine Montage-Vorrichtung mithilfe von \ac{CAD} konstruiert und anschließend per \ac{DUP}-3D-Druck gefertigt. Um die Aufzeichnung von feinen Vibrationen zu unterbinden, wird die Halterung mit Silikondämpfer im Gehäuse der Elektronik befestigt. 
+Um eine korrekte Erfassung der Messdaten zu gewährleisten muss der MPU9250 mittig entlang der Drehachse in Fahrtrichtung angebracht werden. Dazu wird eine Montage-Vorrichtung mithilfe von \ac{CAD} konstruiert und anschließend per \ac{DUP}-3D-Druck gefertigt. Die Platine ist mit zwei M3 Schrauben in diesem Gehäuse befestigt (Siehe Abbildung \ref{fig:MPUmount}). Um die Aufzeichnung von feinen Vibrationen zu unterbinden, wird die Halterung mit Silikondämpfer im Gehäuse der Elektronik befestigt. 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.2]{MPUmount.png}
+\caption{Montage des MPU9250 im Gehäuse}
+\label{fig:MPUmount}
+\end{figure}
 
 \subsection{Programmatische Implementation der inertialen Messeinheit}
 \label{subsec:IMUprogram}
