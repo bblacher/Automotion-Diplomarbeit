@@ -19,6 +19,7 @@
 \usepackage{hhline}
 \usepackage{eurosym}
 \usepackage{todonotes}
+\usepackage{hologo}
 %\usetikzlibrary{ipe}
 \usepackage[backend=biber,style=apa]{biblatex}
 \bibliography{bibliography.bib}
@@ -119,8 +120,9 @@
 \definecolor{white}{rgb}{1,1,1}
 
 \pagestyle{fancy}
+\newcommand\ChapVersion[1]{\def\@ChapVersion{#1}}
 \fancyhf{}
-\lfoot{B. Blacher, F. Weissenbacher}
+\lfoot{\@ChapVersion}
 \lhead{Modellauto mit Sensorik}
 \rhead{\includegraphics[scale=0.5]{htllogo.png}}
 \rfoot{\thepage{}}
@@ -150,16 +152,7 @@
 \end{titlepage}
 \newpage
 
-%Tikz example
-%\begin{figure}[h]
-%\centering
-%\begin{tikzpicture}[ipe stylesheet]
-%%content
-%\end{tikzpicture}
-%\caption{Sender-Empfänger-Modell}
-%\label{fig:SenderEmpfaenger}
-%\end{figure}
-
+\ChapVersion{B. Blacher, F. Weissenbacher}
 \includegraphics[page=1, scale=0.7]{./sources/DADB.pdf}
 \newpage
 \input{eidesstattlErkl.tex}
@@ -172,22 +165,26 @@
 \newpage
 \input{theoretGrundl.tex}
 \newpage
+\ChapVersion{B. Blacher}
 \input{Auto.tex}
 \newpage
 \input{Verwaltung.tex}
 \newpage
 \input{IMU.tex}
 \newpage
+\ChapVersion{F. Weissenbacher}
 \input{RPM.tex}
 \newpage
 \input{GPS.tex}
 \newpage
 \input{Elektronik.tex}
 \newpage
+\ChapVersion{B. Blacher}
 \input{Datenverarbeitung.tex}
 \newpage
 \input{DesktopApp.tex}
 \newpage
+\ChapVersion{B. Blacher, F. Weissenbacher}
 \input{zusammenfassung.tex}
 \newpage
 \printbibliography
