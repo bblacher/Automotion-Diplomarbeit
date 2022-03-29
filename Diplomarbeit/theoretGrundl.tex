@@ -77,6 +77,10 @@ Lichtschranken gehören zur sogenannten Optoelektronik und geben ein Signal aus,
 \label{fig:IR}
 \end{figure}
 
+\subsection{Drehzahlregler}
+\label{subsec:ESC}
+Wie in Sektion \ref{sec:Auto} erklärt wird, dient ein bürstenloser Gleichstrommotor als Antrieb des Modellautos. Um die Drehzahl dieses Motors regeln zu können ist ein sogenannter \ac{ESC}, z. Dt. Drehzahlregler, notwendig. Anders als bei Bürstenmotoren wird ein Drehfeld mit mehreren Spulen von insgesamt drei Phasen, im Stator erzeugt. Am Rotor (Motorwelle) sind Permanentmagnete dementsprechend angebracht, welche von den Magnetfeldern der Spulen sequentiell angezogen werden wodurch sich die Welle zu drehen beginnt. Das Erzeugen dieses Drehfeldes, also das zeitversetzte Ein- und Ausschalten der Phasen, übernimmt der \ac{ESC}. Das Signal jeder Phase ist prinzipiell ein Rechtecksignal. Über die Ein- und Ausschaltzeit werden die Spulen einer Phase im richtigen Moment aktiviert und deaktiviert. Alle drei Signale werden zeitlich so versetzt, dass ein rotierendes Magnetfeld entsteht. Die Frequenz dieser Signale gibt schließlich die Drehzahl vor. Die Information der Drehzahl erlangt der \ac{ESC} über den Empfänger des Funksystems.
+
 \subsection{Raspberry Pi Zero 2 W}
 \label{subsec:tRasPi}
 Der Raspberry Pi Zero 2 W ist ein Einplatinencomputer der Raspberry Pi Foundation. Mit einem 1 \ac{GHz} quad-core 64-bit Arm Prozessor, 512 \ac{MB} \ac{SDRAM}, eingebauten \ac{WLAN}- und Bluetooth-Modulen und 40 Pins für \ac{GPIO}, \ac{SPI}, \ac{I2C}, \ac{UART} und Spannungsversorgung stellt er ein umfangreiches Paket für die Interaktion mit diverser Sensorik dar. Wie bereits erwähnt, handelt es sich bei dem Raspberry Pi Zero 2 W um einen Einplatinencomputer. Das bedeutet, dass dieser alle Funktionen eines konventionellen Computers auf einer Platine bereit stellt. Mithilfe des Micro-\ac{USB} Anschlusses kann der Raspberry Pi mit externer Peripherie und externen Speichermedien kommunizieren, mithilfe des Mini \ac{HDMI} Ports kann ein externes Display verbunden werden. Die Spannungsversorgung des Raspberry Pi erfolgt über einen zweiten Micro-\ac{USB} Anschluss.
