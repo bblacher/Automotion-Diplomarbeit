@@ -27,7 +27,7 @@ Aufgrund des inkludierten Magnetometers und dem im Vergleich zum BNO055 niedrige
 
 \subsection{Montage der inertialen Messeinheit}
 \label{subsec:IMUmount}
-Um eine korrekte Erfassung der Messdaten zu gewährleisten muss der MPU9250 mittig entlang der Drehachse in Fahrtrichtung angebracht werden. Dazu wird eine Montage-Vorrichtung mithilfe von \ac{CAD} konstruiert und anschließend per \ac{DUP}-3D-Druck gefertigt. Die Platine ist mit zwei M3 Schrauben in diesem Gehäuse befestigt (Siehe Abbildung \ref{fig:MPUmount}). Um die Aufzeichnung von feinen Vibrationen zu unterbinden, wird die Halterung mit Silikondämpfer im Gehäuse der Elektronik befestigt. 
+Um eine korrekte Erfassung der Messdaten zu gewährleisten muss der MPU9250 mittig entlang der Drehachse in Fahrtrichtung angebracht werden. Dazu wird eine Montage-Vorrichtung mithilfe von \ac{CAD} konstruiert und anschließend per \ac{DUP}-3D-Druck gefertigt. Die Platine ist mit zwei M3 Schrauben in diesem Gehäuse befestigt (Siehe Abbildung \ref{fig:MPUmount}). Um die Aufzeichnung von feinen Vibrationen zu vermindern, wird die Halterung mit Silikondämpfern im Gehäuse der Elektronik befestigt. 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.2]{MPUmount.png}
@@ -57,3 +57,7 @@ Az=\frac{g}{\sqrt{\cot(\alpha)^2+\cot(\beta)^2+1}}
 
 Dabei stellt g die Erdbeschleunigung, $\alpha$ die Rotation um die x-Achse (roll), $\beta$ die Rotation um die y-Achse (pitch) und $\gamma$ die Rotation um die z-Achse (yaw) dar. \\
 Um festzustellen, ob der jeweilige Anteil der Erdbeschleunigung subtrahiert oder addiert werden muss, können roll und pitch des Autos betrachtet werden. Wenn sich das Auto in einer horizontalen Lage befindet, ist sowohl roll als auch pitch null. Wenn sich das Auto nach links neigt, wird roll negativ, sollte es sich nach rechts neigen, wird roll positiv. Dasselbe gilt auch für pitch, neigt sich das Auto nach vorne, wird pitch negativ und vice versa. Solange roll also kleiner als null ist, muss das Offset in y-Richtung addiert werden, sollte roll größer als null sein, muss das Offset subtrahiert werden. Dasselbe gilt für pitch und das Offset in x-Richtung. Das Offset in z-Richtung kann immer addiert werden, da das Auto niemals eine Steigung von mehr als $\infty$ bzw. weniger als -$\infty$ befahren kann.
+
+\subsection{Probleme der inertialen Messeinheit}
+\label{subsec:IMUproblems}
+Trotz der in Sektion \ref{subsec:IMUmount} beschriebenen gedämpften Befestigung der inertialen Messeinheit stellen die durch den Motor und das Getriebe erzeugten Vibrationen ein Problem dar. Da die Elektronik auf derselben Grundplatte wie das Antriebssystem befestigt ist, werden diese Vibrationen direkt von der \ac{IMU} aufgenommen, wodurch die Messwerte verfälscht werden. Diese Verfälschungen sind so stark, dass die Messwerte komplett unbrauchbar sind. Eine theoretische mögliche Lösung für dieses Problem ist es, die Messeinheit noch schwingungsdämpfender zu montieren. 

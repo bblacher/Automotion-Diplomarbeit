@@ -113,22 +113,27 @@ Eine Python Bibliothek ist eine Sammlung von verwandten Modulen, sie beinhaltet 
 \subsubsection{Python Bibliothek: os}
 \label{subsubsec:tLibOs}
 Diese Bibliothek - dokumentiert auf \url{https://docs.python.org/3/library/os.html} - stellt verschiedene Funktionen bereit, mit welchen mit dem Betriebssystem, auf dem das Programm ausgeführt wird, interagiert werden kann. Unter anderem werden die Funktionen des lesen beziehungsweise schreiben von Dateien oder das interagieren mit Pfaden für den Programmierer vereinfacht. Alle Funktionen dieser Bibliothek funktionieren unter allen von Python unterstützten Betriebssystemen.
+(\cite{PythonDocs})
 
 \subsubsection{Python Bibliothek: time}
 \label{subsubsec:tLibTime}
 Die Bibliothek \glqq time\grqq\ bietet eine Vielzahl an Funktionen, welche für Zeit-spezifische Python-Programme hilfreich sind. 
+(\cite{PythonDocs})
 
 \subsubsection{Python Bibliothek: datetime}
 \label{subsubsec:tLibDatetime}
 Das Modul \glqq datetime\grqq\ (\url{https://docs.python.org/3/library/datetime.html}) stellt Klassen zum Manipulieren von Daten und Zeiten bereit. Dazu zählen Optionen zum Konvertieren von Zeiten zwischen verschiedenen Zeitzonen und das Umwandeln von Zeiten aus Zeichenketten in ein Zeitformat, welches von Bibliotheken wie dem in Sektion \ref{subsubsec:tPyQtGraph} beschriebenen PyQtGraph verwendet werden kann, um die Werte auf die x-Achse auftragen und bei Vergrößerung oder Verschiebung der Ansicht skalieren zu können. Eine weitere Funktion dieser Bibliothek ist das extrahieren von einzelnen Werten aus einem Zeitpunkt, der als ein solcher abgespeichert wurde. Ein Beispiel dafür ist es, das Monat \glqq März\grqq\ aus dem Datum \verb|2021-03-26T17:29:10+01:00| zu entnehmen.
+(\cite{PythonDocs})
 
 \subsubsection{Python Bibliothek: shutil}
 \label{subsubsec:tShutil}
 Die Bibliothek \glqq shutil\grqq\ - dokumentiert unter \url{https://docs.python.org/3/library/shutil.html} - ermöglicht das interagieren mit Dateien, beispielsweise können mithilfe dieser Bibliothek mehrere Dateien gleichzeitig kopiert oder auch entfernt werden. Für das Kopieren von Dateien werden mehrere verschiedene Optionen angeboten, diese unterscheiden sich hauptsächlich daran, dass bei einigen die Metadaten wie zum Beispiel das Erstell- und Bearbeitungsdatum ebenfalls kopiert werden.
+(\cite{PythonDocs})
 
 \subsubsection{Python Bibliothek: NumPy}
 \label{subsubsec:tNumpy}
 NumPy (\url{https://numpy.org/}) ist eine Python Bibliothek, welche viele wissenschaftliche Funktionen wie beispielsweise das Bearbeiten von Arrays, Matrizen und Vektoren vereinfacht. Unter anderem können mithilfe von NumPy die Inhalte von ganzen Arrays mit einer Funktion in einen anderen Datentyp umgewandelt werden. Außerdem kann NumPy einzelne Spalten oder Zeilen aus Arrays ausschneiden und in andere einfügen. Weitere Funktionen von NumPy sind ein eingebauter Zufallszahlengenerator, Fouriertransformationen und das Berechnen von linearer Algebra. NumPy ist teilweise in Python und teilweise in C geschrieben. Alle Funktionen die zeitkritisch sind sind in C implementiert, während Funktionen, bei welchen die Zeit keine Rolle spielt in Python geschrieben sind.
+(\cite{NumPyDocs})
 
 \subsubsection{Python Bibliothek: imusensor}
 \label{subsubsec:tLibImusensor}
@@ -137,6 +142,7 @@ Die Python Bibliothek \glqq imusensor\grqq\ (\url{https://github.com/niru-5/imus
 \subsubsection{Python Bibliothek: PyQtGraph}
 \label{subsubsec:tPyQtGraph}
 PyQtGraph (https://www.pyqtgraph.org/) ist eine auf Qt und NumPy basierende Python Bibliothek. Aufgrund ihrer Basis ist diese Bibliothek mit Qt kompatibel und kann mit in bestehende Qt-Anwendungen integriert werden. PyQtGraph stellt viele Funktionen bereit, darunter sowohl das \ac{2D}-Plotten als auch das Zeichnen von \ac{3D} Grafiken mithilfe von OpenGL. Zu den \ac{2D}-Funktionen von PyQtGraph zählen unter anderem Linien- und Streudiagramme mit Skalierungs- und Verschiebungsmöglichkeiten und das Zeichnen von Echtzeitdaten. Zu den \ac{3D}-Funktionen zählen das Rendern von Volumenkörpern, Oberflächen- und \ac{3D}-Streuplots und die Möglichkeit diese zu rotieren oder zu skalieren. Während PyQtGraph in Python geschrieben ist, ist die Bibliothek trotzdem hochperformant, da für die benötigten Berechnungen NumPy verwendet wird, welches wie in \ref{subsubsec:tNumpy} beschrieben C-Code verwendet, um zeitkritische Berechnungen durchzuführen.
+(\cite{PyQtGraphDocs})
 
 \subsubsection{Python Bibliothek: py-staticmaps}
 \label{subsubsec:tStaticmaps}
