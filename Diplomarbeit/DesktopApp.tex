@@ -6,7 +6,7 @@ Diese Sektion beschreibt die Bedienung und Funktionsweise der eigens entwickelte
 Für die Programmierung der Desktopanwendung wird ebenfalls Python verwendet, in diesem Fall wird zusätzlich auch Qt verwendet. Qt ist, wie in Sektion \ref{subsubsec:tQt} beschreiben, eine Bibliothek zur Entwicklung von grafischen Oberflächen, was eine Erleichterung in der Entwicklung von Desktopanwendungen darstellt. Die Desktopanwendung dieser Diplomarbeit ist in vier Ansichten aufgeteilt. Wird das Programm gestartet, wird zunächst die \glqq Overview\grqq\ angezeigt. In dieser Ansicht sind ein \ac{3D}-Modell des Autos und drei Schaltflächen zu sehen. Die Schaltflächen führen zu den anderen Ansichten, darunter die \glqq Table View\grqq , die \glqq Plot View\grqq \ und die \glqq Map View\grqq . Die Anwendung verfügt außerdem über eine Werkzeugleiste am oberen Rand des Fensters, welche die Funktionen \glqq Schließen\grqq\ und \glqq Vollbild\grqq\ sowie Verknüpfungen zu den Ansichten \glqq Overview\grqq , \glqq Table View\grqq , \glqq Plot View\grqq\  und \glqq Map View\grqq\ enthält.
 \begin{figure}[h]
 \centering
-\missingfigure{}
+\includegraphics[scale=0.34]{OverView.png}
 \caption{Übersichtsseite der Desktopanwendung}
 \label{fig:Overview}
 \end{figure}
@@ -16,7 +16,7 @@ Für die Programmierung der Desktopanwendung wird ebenfalls Python verwendet, in
 Eine weitere Ansicht ist, wie bereits erwähnt, die \glqq Table View\grqq , in welcher eine Tabelle mit allen Messwerten der geöffneten Datei zu sehen ist. In der Table View sind wie in Abbildung \ref{fig:TableView} abgebildet am oberen Rand der Tabelle Identifikatoren zu sehen, welche die Aufgabe haben, die Werte realen Größen zuordenbar zu machen.
 \begin{figure}[h]
 \centering
-\missingfigure{}
+\includegraphics[scale=0.4]{TableView.png}
 \caption{Table View}
 \label{fig:TableView}
 \end{figure}
@@ -31,7 +31,7 @@ Da eine Tabelle unübersichtlich sein kann und Menschen reine Zahlenwerte oft ni
 Nach dem Einlesen der Daten ordnet das Programm alle Messwerte standardmäßig der 1. Ordinate zu. Die Benutzeroberfläche hat aber die Fähigkeit, auf bis zu drei verschiedenen Ordinaten zu plotten. Diese Ordinaten sind immer alle derselben Abszisse zugeordnet, die einen Zeitverlauf darstellt. Alle Achsen sind dynamisch, bei einer Vergrößerung der Ansicht ändern sich alle Achsenbeschriftungen somit im selben Verhältnis wie die Messwerte. Da das Auftragen von verschiedenen Einheiten auf derselben Achse in einigen Fällen zu unübersichtlichen und falsch skalierten Ansichten führen kann, können die aufgenommenen Werte in den Einstellungen der Software auf andere Achsen gelegt werden. Das Einstellungsfenster ist in Abbildung \ref{fig:plotsettings} zu sehen.
 \begin{figure}[h]
 \centering
-\missingfigure{}
+\includegraphics[scale=0.6]{PlotSettings.png}
 \caption{Plot-Einstellungen}
 \label{fig:plotsettings}
 \end{figure}
@@ -39,7 +39,7 @@ Nach dem Einlesen der Daten ordnet das Programm alle Messwerte standardmäßig d
 Eine weitere Funktion dieser Ansicht ist das optional aktivierbare Gitter, das das Zuweisen von im Graphen angezeigten Werten zu den an den Achsen angezeigten Zahlen vereinfacht. Dieses Gitter kann in einem per \glqq Rechtsklick\grqq \ aufrufbaren Kontextmenü aktiviert werden. Ein Bildschirmausschnitt der \glqq Plot View\grqq \ mit beispielhaften Einstellungen und Werten ist in Abbildung \ref{fig:PlotView} ersichtlich. Die Legende, die in Abbildung \ref{fig:PlotView} links oben zu sehen ist, hat den Auftrag, die Farben den Messwerten zuordenbar zu machen. Wenn ein Element der Legende angeklickt wird, wird die Sichtbarkeit des Elements umgeschaltet. Somit können einzelne Werte einfach ein- und ausgeblendet werden.
 \begin{figure}[h]
 \centering
-\missingfigure{}
+\includegraphics[scale=0.4]{PlotView.png}
 \caption{Plot View}
 \label{fig:PlotView}
 \end{figure}
