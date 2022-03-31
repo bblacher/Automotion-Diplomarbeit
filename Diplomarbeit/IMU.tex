@@ -38,7 +38,15 @@ Um eine korrekte Erfassung der Messdaten zu gewährleisten muss der MPU9250 mitt
 \subsection{Programmatische Implementation der inertialen Messeinheit}
 \label{subsec:IMUprogram}
 Der MPU9250 stellt die gemessenen Werte über den \ac{I2C} Bus bereit. Um diese Werte mit Python am Raspberry Pi auslesen zu können, kann die Bibliothek \glqq smbus\grqq \ (\url{https://pypi.org/project/smbus/}) verwendet werden. Smbus ist eine Python-Implementation der i2c-tools für den Linux-Kernel. Mithilfe von smbus und der \ac{I2C}-Adresse des Sensors können die gemessenen Werte aus den jeweiligen Registern entnommen werden. Diese Werte enthalten aber noch die Erdbeschleunigung und stellen noch keine Lage dar. Um eine zuverlässige Bestimmung der Lage im dreidimensionalen Raum zu ermöglichen, muss wie in Sektion \ref{subsec:tIMU} beschrieben Sensorfusion betrieben werden. Für die einfache Implementation dieses Prozesses gibt es die in Sektion \ref{subsubsec:tLibImusensor} beschriebene Python-Bibliothek \glqq imusensor\grqq . Da der Raspberry Pi den benötigten Rechenaufwand für Madgwick problemlos aufbringen kann, wird in diesem Fall Madgwick verwendet. \\
-Diese Werte beinhalten aber noch immer die Erdanziehungskraft, was in Fällen, in denen sich das ferngesteuerte Auto nicht in einer horizontalen Lage befindet die Messwerte in x- und y-Richtung beeinflusst. Um dieses Problem zu lösen kann mithilfe der Lage im Raum bestimmt werden, auf welche Achse welcher Anteil der Erdbeschleunigung  wirkt. Die dafür benötigten Formeln können aus den Winkelfunktionen abgeleitet werden.
+Diese Werte beinhalten aber noch immer die Erdanziehungskraft, was in Fällen, in denen sich das ferngesteuerte Auto nicht in einer horizontalen Lage befindet die Messwerte in x- und y-Richtung beeinflusst.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.2]{Gravity.png}
+\caption{Beeinflussung der Messung durch die Erdanziehungskraft}
+\label{fig:Gravity}
+\end{figure}
+\\
+Um dieses Problem zu lösen kann mithilfe der Lage im Raum bestimmt werden, auf welche Achse welcher Anteil der Erdbeschleunigung  wirkt. Die dafür benötigten Formeln können aus den Winkelfunktionen abgeleitet werden.
 Die abgeleiteten Formeln für die Beschleunigung in x- (\ref{eqn:imuFx}), y- (\ref{eqn:imuFy}) und z-Richtung (\ref{eqn:imuFz}) sind unten zu sehen.
 \begin{equation}
 Ax=\frac{g*\tan(\gamma)}{\sqrt{\frac{\tan(\gamma)^2}{\cos(\beta)^2}+1}}
