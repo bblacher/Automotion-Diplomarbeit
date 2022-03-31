@@ -32,7 +32,7 @@ Aufgrund der im Vergleich zum ATmega328 hohen Rechenleistung des Arm Cortex-A53,
 \subsection{Spannungsversorgung}
 \label{subsec:elekSupply}
 Da das Auto, wie in Sektion \ref{sec:Auto} beschrieben, mit zwei 7.4\ac{V} Lithium Polymer Akkus betrieben wird, bietet sich die Möglichkeit an, diese auch für die Versorgung der Messelektronik zu verwenden. Um die Akkus gleichmäßig zu belasten werden beide in Serie geschalteten Akkus für diese Spannungsversorgung verwendet. Damit stehen 14.8\ac{V} zur Verfügung, welche mit einem DC-DC Stepdown-Converter auf 5\ac{V}, was der Versorgungsspannung des Raspberry Pi entspricht, herabgewandelt werden. Der DC-DC-Converter weist am Eingang zwei Schraubklemmen sowie eine Hohlbuchse auf. Die Leitungen der Akkus werden an den Schraubklemmen am Eingang des Converters angeschlossen. Ein Kippschalter, der die Plus-Leitung unterbrechen kann, ermöglicht das manuelle Aus- und Einschalten der gesamten Messelektronik. Zusätzlich wird ein Voltmeter mit Siebensegmentanzeige an der Hohlsteckerverbindung am Eingang angeschlossen, welches die Akkuspannung anzeigt (Siehe Abbildung \ref{fig:switch}). Der Stepdown-Wandler weist am Ausgang ebenfalls zwei Schraubklemmen und zusätzlich eine \ac{USB}-A-Buchse auf. Da der Raspberry Pi als Versorgungsanschluss eine Micro-\ac{USB}-Buchse verbaut hat, wird ein USB-A zu Micro-\ac{USB} Kabel gekürzt und als Versorgungsleitung verwendet. Die Spannungsversorgung der einzelnen Sensoren erfolgt über die 3.3\ac{V}, 5\ac{V} und GND Pins des Raspberry Pi. 
-
+\newpage
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.2]{switch.png}
@@ -45,15 +45,17 @@ Da das Auto, wie in Sektion \ref{sec:Auto} beschrieben, mit zwei 7.4\ac{V} Lithi
 Eine robuste, vielseitige Einhausung der Messelektronik ist essentiell, um diese stabil montieren sowie von äußeren Einflüssen wie Staub und Sand schützen zu können. Die Sitzkonstruktion des Autos wird entfernt, wodurch Raum für ein Gehäuse freigelegt wird. Als Basis dient eine einfache Plattform, welche an den ursprünglichen Montagestellen der Sitzkonstruktion in das Auto geschraubt wird. Direkt darunter, auf der Bodenplatte des Autos, befinden sich die Akkus. Auf diese Plattform werden mehrere Seitenwände aufgeschraubt.\\
 Sämtliche Schraubverbindungen im und am Gehäuse werden mittels M3 Gewindeeinsätzen ermöglicht. Die \ac{FDM}-3D-gedruckten Gehäusekomponenten weisen Bohrungen auf, in welche diese Gewindeeinsätze eingeschmolzen werden. Diese Lösung, Schraubverbindungen in 3D-Druck-Komponenten zu ermöglichen, ist sehr belastbar und einfach umzusetzen, weshalb sie häufig eingesetzt wird. \\
 Die U-förmige Rück- und gleichzeitig hintere Seitenwand, weist in Bodennähe eine rechteckige Ausnehmung auf, welche für die Durchführung der Versorgungsleitungen sowie den Sensorleitungen der hinteren Drehzahlsensoren vorgesehen ist. Auf der rechten Seite dieser Wand ist der Kippschalter der Versorgungsleitung eingefasst. Links befindet sich die \ac{USB}-A-Buchse für die Datenübertragung mittels \ac{USB}-Datenträger, wie es in Sektion \ref{subsec:Datenübertragungsmodus} näher beschrieben wird.
+\newpage
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.1]{Electronics.jpg}
 \caption{Elektronik im Gehäuse}
 \label{fig:elekCase}
 \end{figure}
-\\
+
 An der hinteren Oberkante dieser Komponente sind außerdem zwei Scharniere ausgeführt, um den Deckel einfach öffnen und schließen zu können. Am vorderen Ende der Plattform ist links und rechts jeweils eine weitere Wandkonstruktion angebracht, welche mit der hinteren mit einem schmalen Abstand abschließt. Auf der rechten Wand befindet sich ein Taster für das Umschalten des Programmzustandes sowie eine \ac{RGB}-\ac{LED}, die diesen Zustand signalisiert. In der linken vorderen Wand ist die Siebensegmentanzeige eingebaut, welche die aktuelle Akkuspannung anzeigt. Diese vorderen Wandteile weisen außerdem eine Montagemöglichkeit für die Deckelverriegelungen auf. Der Deckel des Gehäuses deckt den gesamten Innenraum ab und kann durch die bereits erwähnten Scharniere auf- und zugeklappt werden. Mit Hilfe von zwei Drehverriegelungen wird der Deckel geschlossen gehalten. Wie in Sektion \ref{subsec:GPSmount} beschrieben, befindet sich im Deckel eine Bohrung für die Durchführung der GPS-Antennenleitung.\\
 Um den Raspberry Pi und beispielsweise den Stepdown-Wandler auf der Grundplattform zu montieren, weist diese ebenfalls Bohrungen mit eingeschmolzenen Gewindeeinsätzen auf. Für die Montage sind außerdem einzelne Gehäuse für den Raspberry Pi und Stepdown-Wandler notwendig. Diese wurden mittels \ac{CAD} konstruiert und anschließend mit dem in Sektion \ref{subsec:tDUP} beschriebenen \ac{DUP}-Verfahren 3D-gedruckt. Da der Raspberry Pi Bohrungen in den Ecken aufweist, wird dieser mit M3 Schrauben in seinem Gehäuse montiert. Der Stepdown-Wandler hat keine Befestigungsbohrungen und wird deshalb mit doppelseitigem Klebeband befestigt. 
+\newpage
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.2]{Elektronik_Raspi.png}
@@ -64,5 +66,13 @@ Um den Raspberry Pi und beispielsweise den Stepdown-Wandler auf der Grundplattfo
 \subsection{Einbindung externer Elektronik}
 \label{subsec:elekExtern}
 Wie in Sektion \ref{subsec:RPMmount} bereits erklärt, sind die Drehzahlsensoren in der Nähe aller vier Räder angebracht. Eine zuverlässige Verbindung dieser Sensoren mit dem Raspberry Pi ist ausschlaggebend. Besonders bei den Vorderrädern, welche durch die Federung sowie die Lenkung Bewegungen ausführen ist eine robuste, aber flexible Verbindung zum Gehäuse notwendig. Aus diesem Grund werden als Verbindungselemente JST-XH Stecker und Buchsen verwendet und eine biegsame Mantelleitung zur Versorgung und Signalübertragung. Eine Mantelleitung hat den Vorteil, dass sie mehrere Adern mit einem Mantel umschließt, der es ermöglicht die Leitung stabil am Fahrgestell zu fixieren und die einzelnen Adern gegen mechanische Beanspruchung schützt. Auf diese Weise können die Sensoren außerdem an- und abgeschlossen werden.\\
-Die insgesamt vier Mantelleitungen werden durch dementsprechende Ausnehmungen an den Gehäusewänden in das Innere des Gehäuses geführt. Um das Anschließen der Drehzahlsensoren zu vereinfachen, werden diese auf einer Anschlusskonstruktion mit mehreren JST-XH Buchsen angesteckt. Diese Buchsen sind bereits mit den korrekten Pins am Raspberry Pi verbunden. Auch das \ac{GPS}-Modul ist mit einer solchen Mantelleitung und JST-XH Verbindungen an dieser Anschlusseinheit angeschlossen.\\
+Die insgesamt vier Mantelleitungen werden durch dementsprechende Ausnehmungen an den Gehäusewänden in das Innere des Gehäuses geführt. Um das Anschließen der Drehzahlsensoren zu vereinfachen, werden diese auf einer Anschlusskonstruktion mit mehreren JST-XH Buchsen angesteckt. Diese Buchsen sind bereits mit den korrekten Pins am Raspberry Pi verbunden. Auch das \ac{GPS}-Modul ist mit einer solchen Mantelleitung und JST-XH Verbindungen an dieser Anschlusseinheit angeschlossen.
+\newpage
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.2]{Mantelleitung.png}
+\caption{Anschlussleitungen externer Elektronik}
+\label{fig:Mantelleitung}
+\end{figure}
+
 Um den in Sektion \ref{subsec:Datenübertragungsmodus} beschriebenen Datenübertragungsmodus nutzen zu können, ist eine \ac{USB}-A-Buchse, welche von außerhalb des Gehäuses zugänglich sein muss, zu installieren. Diese von Außen zugängliche Buchse wird mithilfe eines micro-\ac{USB} auf \ac{USB}-A-Adapters, welcher an der Datenbuchse des Raspberry Pi angeschlossen ist, realisiert.
