@@ -1,2 +1,1 @@
-# Automotion-Diplomarbeit
-Automotion: Diplomarbeit + Präsentation
+Development moved to https://gitlab.com/automotion/
